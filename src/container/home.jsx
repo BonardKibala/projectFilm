@@ -1,29 +1,26 @@
-import { Button, Segment, Grid,Icon } from 'semantic-ui-react'
+import { Button, Grid, Icon } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
+import NewsCard from './movies/newsCard'
+import News from './news'
+import CarousselHome from './movies/carousselHome'
+import LastFilms from './movies/lastFilm'
+import SeriesTV from './series/newsSeries'
+import Footer from './footer'
+
 const Home = () => {
 
     return (
         <>
-            <Segment className='startSegment'>
-                <Grid columns={1} >
-                    <Grid.Column className='textStart'>
-                        <div>
-                        Avec <span className='head'>Biso</span><span className='span'>Film</span><Icon className='iconFilm1' name='film'/>, recherchez le film au choix et savourez-le avec le plaisir.
-                        <br></br><br></br>
-                        <span className='bienvenu'>
-                            Vous êtes le(a) bienvenu(e)
-                          </span>
-                        </div>
-                        <div><br></br>
-                        <Button primary className='btnStart'>
-                            Commencer
-                        </Button>
-                        </div>
-                    </Grid.Column>
-                    {/* <Grid.Column className='ContainerbtnStart'>
-                        
-                    </Grid.Column> */}
-                </Grid>
-            </Segment>
+        <div className='HomeContainer'>
+            <CarousselHome/>
+            <News/><br></br>
+            <div className='separeBlock'></div><br></br>
+            <LastFilms/><br></br>
+            <div className='separeBlock'></div><br></br>
+            <SeriesTV/><br></br>
+            <div className='separeBlock'></div><br></br>
+            <Footer/>
+        </div>
         </>
     )
 }

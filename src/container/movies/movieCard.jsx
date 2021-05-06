@@ -40,12 +40,12 @@ const MoviesCard = ({ id, title, poster_path, release_date, overview }) => {
       open={open}
       size='fullscreen'
       trigger={
-        <Card color='orange' raised >
+        <Card color='red' raised >
           <Image src={Image_Api + poster_path} wrapped ui={false} className='cardImage' />
-          <Card.Content>
-            <Card.Header >{title}</Card.Header>
+          <Card.Content className='cardContent'>
+            <Card.Header className='filmTitle'>{title}</Card.Header>
             <Card.Meta>
-              <span className='date'>{release_date}</span>
+              <span className='releaseDate'>{release_date}</span>
             </Card.Meta>
           </Card.Content>
         </Card>
@@ -109,7 +109,7 @@ const MoviesCard = ({ id, title, poster_path, release_date, overview }) => {
 
                     <Table.Row>
                       {detail.production_companies.map((companies, index) => <div>
-                        <Table.Cell singleLine>{`${companies.name}  (${companies.origin_country})`}</Table.Cell>
+                        <Table.Cell singleLine >{`${companies.name}  (${companies.origin_country})`}</Table.Cell>
                         
                       </div>)}
                     </Table.Row>

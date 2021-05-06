@@ -2,7 +2,7 @@
 import React from 'react'
 import { Button, Icon, Modal, Embed } from 'semantic-ui-react'
 
-const Image_Api = "https://image.tmdb.org/t/p/w1280";
+const Image_Api = "https://image.tmdb.org/t/p/w500";
 
 const VideoView = ({ title, videoKey,poster_path }) => {
     const [open, setOpen] = React.useState(false)

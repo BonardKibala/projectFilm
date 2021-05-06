@@ -8,11 +8,10 @@ const PrincipalContainer = ()=>{
 
     return (
 <div className='principalcontainer'>
-<MenuSite />
 <Switch>
     <Route exact path="/" component={Home} />
     <Route path="/movies" component={MoviesList} />
-    <Route  path="/series" component={SeriesList} />
+    <Route path="/series" component={SeriesList} />
 </Switch>
 </div>
     )
