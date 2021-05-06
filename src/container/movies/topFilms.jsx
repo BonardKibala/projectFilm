@@ -1,9 +1,9 @@
 import { useEffect,useState } from 'react'
 import { Button, Grid } from 'semantic-ui-react'
-import MoviesCard from './movies/movieCard'
 import {Link} from 'react-router-dom'
+import MoviesCard from './movieCard';
 
-const Featured_Api = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b8e4f457e57f8e0e1ed625b784a14f3b&language=fr-FR&page=10`;
+const Featured_Api = `https://api.themoviedb.org/3/movie/top_rated?sort_by=popularity.desc&api_key=b8e4f457e57f8e0e1ed625b784a14f3b&language=fr-FR&page=10`;
     
 const TopFilms = () => {
     const [TopMovies, setTopMovies] = useState([])
@@ -19,7 +19,7 @@ const TopFilms = () => {
     return (
         <>
             <Grid>
-                <div className='movieTitle'><h1>Films populaires</h1><div className='redBorder'></div></div><br></br><br></br>
+                <div className='movieTitle'><h1>Films Top</h1><div className='redBorder'></div></div><br></br><br></br>
             </Grid>
 
             <Grid container>

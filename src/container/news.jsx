@@ -3,7 +3,7 @@ import { Button, Grid } from 'semantic-ui-react'
 import MoviesCard from './movies/movieCard'
 import {Link} from 'react-router-dom'
 
-const Featured_Api = `https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=b8e4f457e57f8e0e1ed625b784a14f3b&language=fr-FR&page=10`;
+const Featured_Api = `https://api.themoviedb.org/3/movie/popular?sort_by=popularity.desc&api_key=b8e4f457e57f8e0e1ed625b784a14f3b&language=fr-FR&page=10`;
     
 const News = () => {
     const [newsMovies, setNewsMovies] = useState([])

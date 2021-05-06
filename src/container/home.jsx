@@ -6,6 +6,7 @@ import CarousselHome from './movies/carousselHome'
 import LastFilms from './movies/lastFilm'
 import SeriesTV from './series/newsSeries'
 import Footer from './footer'
+import TopFilms from './movies/topFilms'
 
 const Home = () => {
 
@@ -14,6 +15,8 @@ const Home = () => {
         <div className='HomeContainer'>
             <CarousselHome/>
             <News/><br></br>
+            <div className='separeBlock'></div><br></br>
+            <TopFilms/><br></br>
             <div className='separeBlock'></div><br></br>
             <LastFilms/><br></br>
             <div className='separeBlock'></div><br></br>
