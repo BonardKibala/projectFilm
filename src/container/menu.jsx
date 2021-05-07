@@ -1,10 +1,10 @@
-import { Menu, Segment, Search, Header, Icon, Input } from 'semantic-ui-react'
+import { Menu, Segment, Search, Header, Icon, Input, Form } from 'semantic-ui-react'
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import MoviesList from './movies/moviesList'
 
 
-const MenuSite = ({ onChange }) => {
+const MenuSite = ({ onChange,onSubmit,value }) => {
     const [activeItem, setActiveItem] = useState('movies')
     const handleItemClick = (name) => {
         setActiveItem(name)
@@ -25,11 +25,17 @@ const MenuSite = ({ onChange }) => {
 
                     <Menu.Menu position='right' className='search'>
                         <Menu.Item>
-                            <Input
+                            {/* <Form ><Input
                                 icon={<Icon name='search' inverted circular link />}
                                 placeholder='Rechercher'
-                                onChange={onChange}
-                            />
+                                onChange={onChange}/></Form> */}
+                <Form onSubmit={onSubmit}>
+        <Form.Field className="form">
+            <Input icon={<Icon name='search' inverted circular link />} className="inputSearch"
+                placeholder="Rechercher" onChange={onChange} value={value} />
+        </Form.Field>
+    </Form>
+                            
                         </Menu.Item>
                     </Menu.Menu>
                 </Menu>
