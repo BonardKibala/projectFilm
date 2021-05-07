@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { useEffect, useState } from "react";
-import { Card, Grid, Pagination, Segment } from "semantic-ui-react";
+import { Grid, Pagination} from "semantic-ui-react";
 import MenuSite from "../menu";
 import LoaderPage from "./loader";
 import MoviesCard from "./movieCard";
@@ -18,6 +18,7 @@ const MoviesList = () => {
     const [activePage, setActivePage] = useState(1);
     const [apiUrl, setApiUrl] = useState(Featured_Api + activePage);
     const [loading,setLoading] = useState(false)
+    const  [searchValue,setSearchValue]=useState('')
 
 
     useEffect(() => {
@@ -28,7 +29,13 @@ const MoviesList = () => {
                 console.log(data);
                 setMovies(data.results);
             })
-    }, [apiUrl]);
+    }, []);
+
+    const search =(e)=>{
+      e.preventDefault()
+     const value=e.target.value
+     setSearchValue(value)
+    }
 
     const onChange = (e, pageInfo) => {
         setActivePage(pageInfo.activePage);
@@ -37,7 +44,7 @@ const MoviesList = () => {
 
     return (
         <div >
-            <MenuSite/>
+            <MenuSite onChange={(e)=>search(e)}/>
             <Grid >
             <div className='movieTitle'><h1>Tous les Films</h1><div className='redBorder'></div></div><br></br><br></br>
             </Grid>
