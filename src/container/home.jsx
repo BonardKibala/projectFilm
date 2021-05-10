@@ -1,12 +1,12 @@
 import { Button, Grid, Icon } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import NewsCard from './movies/newsCard'
-import News from './news'
 import CarousselHome from './movies/carousselHome'
 import LastFilms from './movies/lastFilm'
 import SeriesTV from './series/newsSeries'
 import Footer from './footer'
 import TopFilms from './movies/topFilms'
+import News from './movies/news'
 
 const Home = () => {
 

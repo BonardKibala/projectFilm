@@ -7,7 +7,6 @@ import LoaderPage from "./loader";
 import MoviesCard from "./movieCard";
 
 
-
 const MoviesList = () => {
     const [movies, setMovies] = useState([])
 
