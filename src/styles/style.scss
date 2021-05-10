@@ -142,8 +142,8 @@ margin: 0 auto !important;
     height: .1vh !important;
     background-color: white !important;
 }
-// .menu-footer{
-//     display: flex !important;
-//     flex-direction: column;
-//     justify-content: flex-start;
-// }
+.moviebar{
+    display: flex !important;
+    flex-wrap: wrap;
+    background-color: black !important;
+}
