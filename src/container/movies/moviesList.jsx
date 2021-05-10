@@ -5,6 +5,7 @@ import { Grid, Pagination } from "semantic-ui-react";
 import MenuSite from "../menu";
 import LoaderPage from "./loader";
 import MoviesCard from "./movieCard";
+import Moviesbar from "./moviesBar";
 
 
 const MoviesList = () => {
@@ -38,7 +39,7 @@ const MoviesList = () => {
     const handlesubmit = (e) => {
         e.preventDefault()
         if (searchValue) {
-            fetch_api(search_Api +searchValue)
+            fetch_api(search_Api + searchValue)
         }
     }
 
@@ -54,6 +55,9 @@ const MoviesList = () => {
         <div >
             <MenuSite onChange={(e) => handlechange(e)} onSubmit={(e) => handlesubmit(e)} value={searchValue} />
             <Grid >
+                <Grid.Column computer={16} mobile={16} tablet={16}>
+                    <Moviesbar />
+                </Grid.Column>
                 <div className='movieTitle'><h1>Tous les Films </h1><div className='redBorder'></div></div><br></br><br></br>
             </Grid>
             {
@@ -71,7 +75,7 @@ const MoviesList = () => {
                             ellipsisItem={null}
                             secondary
                             inverted
-                        />
+                        /><br></br><br></br>
                     </Grid>
 
             }

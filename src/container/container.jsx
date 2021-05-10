@@ -1,7 +1,6 @@
 
 import { Route, Switch } from 'react-router-dom';
 import Home from './home'
-import MenuSite from './menu'
 import MoviesList from './movies/moviesList';
 import SeriesList from './series/seiesList';
 const PrincipalContainer = ()=>{

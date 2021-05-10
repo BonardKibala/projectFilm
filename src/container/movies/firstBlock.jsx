@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const FirstBlock = () => {
     return (
         <>
-            <Grid className='startSegment1'>
+            <Grid className='startSegment1' columns={16}>
                 <Grid.Column mobile={16} tablet={16} computer={16}>
                     <div className='bisoFilm'><span className='head'>Biso</span><span className='span'>Film</span><Icon className='iconFilm1' name='film' /></div>
                 </Grid.Column>
