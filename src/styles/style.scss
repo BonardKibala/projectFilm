@@ -147,3 +147,24 @@ margin: 0 auto !important;
     flex-wrap: wrap;
     background-color: black !important;
 }
+.form-search{
+text-align: center !important;
+&__input{
+width: 50% !important;
+}
+}
+.Menu{
+    position: fixed !important;
+    z-index: 9999 !important;
+    width: 100vw !important;
+}
+.movieListContainer{
+    margin-top: 7rem !important;
+    .moviesBar{
+        display: flex !important;
+        flex-direction: column;
+        flex-wrap: wrap;
+        justify-content: center !important;
+        background-color: black !important;
+    }
+}

@@ -4,42 +4,32 @@ import { Link } from 'react-router-dom'
 import MoviesList from './movies/moviesList'
 
 
-const MenuSite = ({ onChange,onSubmit,value }) => {
+const MenuSite = () => {
     const [activeItem, setActiveItem] = useState('movies')
     const handleItemClick = (name) => {
         setActiveItem(name)
     }
     return (
         <>
-            <Segment inverted>
-                <Header inverted className='header'>
-                    <Link to='/'><h1 className='head'>Biso<span className='span'>Film</span></h1></Link><Icon className='iconFilm' name='film' />
-                </Header>
+            <Segment inverted className='Menu'>
                 <Menu inverted pointing secondary >
 
-                    {/* <Link to="/"><Menu.Item name='home' onClick={()=>handleItemClick('home')} active={activeItem === 'home'}/></Link>
-                     */}
-                    <Link to="/movies"><Menu.Item name='movies' onClick={() => handleItemClick('movies')} active={activeItem === 'movies'} /></Link>
-
-                    <Link to="/series"><Menu.Item name='series' onClick={() => handleItemClick('series')} active={activeItem === 'series'} /></Link>
+                    <Menu.Item>
+                        <Header inverted className='header'>
+                            <Link to='/'><h1 className='head'>Biso<span className='span'>Film</span></h1></Link><Icon className='iconFilm' name='film' />
+                        </Header>
+                    </Menu.Item>
 
                     <Menu.Menu position='right' className='search'>
-                        <Menu.Item>
-                            {/* <Form ><Input
-                                icon={<Icon name='search' inverted circular link />}
-                                placeholder='Rechercher'
-                                onChange={onChange}/></Form> */}
-                <Form onSubmit={onSubmit}>
-        <Form.Field className="form">
-            <Input icon={<Icon name='search' inverted circular link />} className="inputSearch"
-                placeholder="Rechercher" onChange={onChange} value={value} />
-        </Form.Field>
-    </Form>
-                            
-                        </Menu.Item>
+                        <Link to="/movies"><Menu.Item name='movies' onClick={() => handleItemClick('movies')} active={activeItem === 'movies'} /></Link>
+
+                        <Link to="/series"><Menu.Item name='series' onClick={() => handleItemClick('series')} active={activeItem === 'series'} /></Link>
+                        <Link to="/actors"><Menu.Item name='acteurs' onClick={() => handleItemClick('acteurs')} active={activeItem === 'acteurs'} /></Link>
+
+
                     </Menu.Menu>
                 </Menu>
-            </Segment>
+            </Segment><br></br>
 
         </>
 

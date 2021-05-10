@@ -1,12 +1,11 @@
 import React from "react";
-import ReactDOM from "react-dom";
 import { useEffect, useState } from "react";
 import { Grid, Pagination } from "semantic-ui-react";
 import MenuSite from "../menu";
 import LoaderPage from "./loader";
 import MoviesCard from "./movieCard";
 import Moviesbar from "./moviesBar";
-import userEvent from "@testing-library/user-event";
+import FormSearch from "../Elements/formsearch";
 
 
 const MoviesList = () => {
@@ -46,9 +45,6 @@ const MoviesList = () => {
         fetch_api(DiscoverApi)
     }, [DiscoverApi]);
 
-    // useEffect(() => {
-    //     fetch_api(comedyUrl)
-    // }, []);
 
     const fetch_api = (api) => {
         fetch(api).then(response => response.json())
@@ -143,13 +139,16 @@ const pageChange = (e, pageInfo) => {
 
 return (
     <div >
-        <MenuSite onChange={(e) => handlechange(e)} onSubmit={(e) => handlesubmit(e)} value={searchValue} />
-        <Grid >
-            <Grid.Column computer={16} mobile={16} tablet={16}>
-                <Moviesbar onClick={(e) => clickMoviesbar(e)} />
+        <Grid className='movieListContainer'>
+        <Grid.Column computer={16} mobile={16} tablet={16} className='form-search'>
+                <FormSearch  onChange={(e) => handlechange(e)} onSubmit={(e) => handlesubmit(e)} value={searchValue}/>
             </Grid.Column>
-            <div className='movieTitle'><h1>{searchValue?`Résultat de la recherche`:title}</h1><div className='redBorder'></div></div><br></br><br></br>
-        </Grid>
+            <Grid.Column computer={16} mobile={16} tablet={16} className='moviesBar'>
+                <Moviesbar onClick={(e) => clickMoviesbar(e)} />
+                <div className='movieTitle'><h1>{searchValue?`Résultat de la recherche`:title}</h1><div className='redBorder'></div></div><br></br><br></br>
+       
+            </Grid.Column>
+             </Grid>
         {
             loading ? <div><LoaderPage /></div> :
                 <Grid container >

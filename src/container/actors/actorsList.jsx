@@ -2,11 +2,13 @@ import React from "react";
 import { useEffect, useState } from "react";
 import { Grid, Pagination } from "semantic-ui-react";
 import LoaderPage from "../movies/loader";
+import MoviesCard from "../movies/movieCard";
+import Moviesbar from "../movies/moviesBar";
 import FormSearch from "../Elements/formsearch";
-import ActorsCard from "../actors/actorsCard";
+import ActorsCard from "./actorsCard";
 
 
-const SeriesList = () => {
+const ActorsList = () => {
     const [actors, setActors] = useState([])
 
     const [genreId, setGenreId] = useState('')
@@ -94,4 +96,4 @@ return (
     </div>
 )
 }
-export default SeriesList;
+export default ActorsList;
